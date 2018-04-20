@@ -1,0 +1,186 @@
+//@import "scss/fontawesome";
+*{
+  font-family: 'Roboto', sans-serif;
+}
+a{
+  text-decoration: none;
+}
+body {
+  margin: 0;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+51,0f030f+100&0.87+0,0.22+51,0.91+100 */
+  background: -moz-linear-gradient(left, rgba(0,0,0,0.87) 0%, rgba(0,0,0,0.22) 51%, rgba(15,3,15,0.91) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba(0,0,0,0.87) 0%,rgba(0,0,0,0.22) 51%,rgba(15,3,15,0.91) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(0,0,0,0.87) 0%,rgba(0,0,0,0.22) 51%,rgba(15,3,15,0.91) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#de000000', endColorstr='#e80f030f',GradientType=1 ); /* IE6-9 */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  background: transparent;
+  height: 80px;
+  padding: 20px 30px 20px 30px;
+  .logo_header {
+    width: 200px;
+    a {
+      svg {
+        width: 100px
+      }
+    }
+  }
+  .menu-header {
+    width: 200px;
+    button {
+      padding: 5px;
+      background: transparent;
+      border: none;
+      font-size: 20px;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background: #13c179;
+    }
+
+  }
+}
+.container{
+  position: relative;
+  padding-left: 100px;
+  padding-right: 100px;
+  .icon-close-menu{
+    border: 1px solid white;
+    border-radius: 20px;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 10%;
+    right: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a{
+      color: white;
+      font-size: 20px;
+      font-weight: 300;
+    }
+  }
+  .about-content{
+    padding-top: 100px;
+    .title-about{
+      font-size: 200px;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+  .content-detail-about{
+    text-align: center;
+    .content-about-1{
+      color: white;
+      font-size: 100px;
+      line-height: 150px;
+      font-weight: bold;
+
+    }
+    .content-about-2{
+      color: white;
+      font-size: 50px;
+      line-height: 75px;
+    }
+
+  }
+  .menu-list{
+    height: -webkit-fill-available;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .item_menu{
+      margin-bottom: 20px;
+      padding: 10px;
+      a{
+        font-size: 70px;
+        font-weight: bold;
+        color: white;
+      }
+    }
+    .item_menu:hover{
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0c4d99+0,2989d8+52,0c4d99+100&0.68+0,0.45+52,0.74+100 */
+      background: -moz-linear-gradient(left, rgba(12,77,153,0.68) 0%, rgba(41,137,216,0.45) 52%, rgba(12,77,153,0.74) 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(left, rgba(12,77,153,0.68) 0%,rgba(41,137,216,0.45) 52%,rgba(12,77,153,0.74) 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to right, rgba(12,77,153,0.68) 0%,rgba(41,137,216,0.45) 52%,rgba(12,77,153,0.74) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ad0c4d99', endColorstr='#bd0c4d99',GradientType=1 ); /* IE6-9 */
+    }
+  }
+  .home{
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    h1{
+      font-size: 160px;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+}
+
+.awards-content{
+  padding-right: 10%;
+  padding-left: 10%;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 40px;
+  .awards-col-1{
+    width: 100px;
+    color: #05050a;
+    font-weight: bold;
+  }
+  .awards-col-2{
+    width: calc(100% - 100px);
+    display: flex;
+    flex-direction: column;
+    .item-awards-col-2{
+      margin-bottom: 20px;
+      color: #05050a;
+      font-weight: 300;
+      font-size: 35px;
+    }
+  }
+}
+.footer{
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+  .icon_social{
+    display: flex;
+    width: 400px;
+    align-items: center;
+    justify-content: flex-end;
+
+    .item_icon{
+      color: white;
+      i{
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+      }
+      width: 40px;
+    }
+    .text_icon_f{
+      width: 100px;
+    }
+  }
+}
+.item-work-bg{
+  img{
+    //height: 500px;
+  }
+}
