@@ -3,6 +3,18 @@
     <div class="about-content">
       <h1 class="title-about">AWARDS</h1>
       <div class="content-detail-about">
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" :style="`width:0%`">
+            0%
+          </div>
+        </div>
+        <div>
+          <button class="button-hold">
+            Hold
+          </button>
+        </div>
+      </div>
+      <div class="content-detail-about">
         <div class="content-about-1">
           <p>We love awards, especially if we get them.</p>
         </div>
@@ -89,10 +101,40 @@
           }, 1000)
         })
       },
+      data(){
+            return{
+              value_progress:0
+            }
+      },
+  
         name: "awards",
       mounted () {
+        var timeoutId =0;
         this.$store.commit('REMOVE_LOADING');
+        var value = 0;
+        $('.button-hold').on('mousedown', function() {
+      
+            timeoutId = setInterval(function(){
+              value +=3;
+          $('.progress-bar').attr("aria-valuenow", value);
+          $('.progress-bar').css('width',value+"%");
+            $('.progress-bar').html(value+'%');
+            
+            }, 100);
+        }).on('mouseup mouseleave', function() {
+            clearTimeout(timeoutId);
+                              value=0;
+        $('.progress-bar').attr("aria-valuenow", 0);
+          $('.progress-bar').css('width',value+"%");
+           $('.progress-bar').html(value+'%');
+      
+        });
       },
+      methods:{
+          changeValue(value){
+          this.value_progress = value
+        }
+      }
     }
 </script>
 

@@ -8,6 +8,7 @@ module.exports = {
     ],
     link: [
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
+      {rel:"stylesheet", href:"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"},
       {rel: 'stylesheet', href: '/css/style.css'},
       {href:"https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=vietnamese", rel:"stylesheet"},
     ],
@@ -17,7 +18,8 @@ module.exports = {
         src: "https://code.jquery.com/jquery-3.3.1.min.js",
         integrity: "sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=",
         crossorigin: "anonymous"
-      }
+      },
+      {src:"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"}
     ]
   },
   router: {
