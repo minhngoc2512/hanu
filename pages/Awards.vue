@@ -2,19 +2,19 @@
   <div class="container">
     <div class="about-content">
       <h1 class="title-about">AWARDS</h1>
-      <div class="content-detail-about">
+      <div id="progress-bar" class="content-detail-about">
         <div class="progress">
           <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" :style="`width:0%`">
             0%
           </div>
         </div>
         <div>
-          <button class="button-hold">
+          <button  class="button-hold">
             Hold
           </button>
         </div>
       </div>
-      <div class="content-detail-about">
+      <div id="content-page" style="display:none" class="content-detail-about">
         <div class="content-about-1">
           <p>We love awards, especially if we get them.</p>
         </div>
@@ -119,6 +119,11 @@
           $('.progress-bar').attr("aria-valuenow", value);
           $('.progress-bar').css('width',value+"%");
             $('.progress-bar').html(value+'%');
+            if(value>=100) {
+            clearTimeout(timeoutId) ;
+            $("#progress-bar"). css("display":"none") ;
+            $("#content-page"). css("display":"block") ;
+            } 
             
             }, 100);
         }).on('mouseup mouseleave', function() {
