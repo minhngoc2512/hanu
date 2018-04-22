@@ -9,9 +9,10 @@
           </div>
         </div>
         <div>
-          <button  class="button-hold">
-            Hold
-          </button>
+          <center>
+          <button  class="button-hold"></button>
+          <h3 style="text-align:center;font-size:20px;color:white">Hold Button</h3>
+          </center>
         </div>
       </div>
       <div id="content-page" style="display:none" class="content-detail-about">
@@ -106,14 +107,15 @@
               value_progress:0
             }
       },
-  
+
         name: "awards",
       mounted () {
-        var timeoutId =0;
         this.$store.commit('REMOVE_LOADING');
+        var timeoutId =0;
+        
         var value = 0;
         $('.button-hold').on('mousedown', function() {
-      
+
             timeoutId = setInterval(function(){
               value +=3;
           $('.progress-bar').attr("aria-valuenow", value);
@@ -121,10 +123,10 @@
             $('.progress-bar').html(value+'%');
             if(value>=100) {
             clearTimeout(timeoutId) ;
-            $("#progress-bar"). css("display":"none") ;
-            $("#content-page"). css("display":"block") ;
-            } 
-            
+            $("#progress-bar").css("display","none") ;
+            $("#content-page").css("display","block") ;
+            }
+
             }, 100);
         }).on('mouseup mouseleave', function() {
             clearTimeout(timeoutId);
@@ -132,7 +134,7 @@
         $('.progress-bar').attr("aria-valuenow", 0);
           $('.progress-bar').css('width',value+"%");
            $('.progress-bar').html(value+'%');
-      
+
         });
       },
       methods:{
@@ -144,5 +146,14 @@
 </script>
 
 <style scoped>
-
+    .button-hold{
+      background: transparent;
+      border: 2px solid white;
+      border-radius: 30px;
+      height: 60px;
+      width: 60px;
+    }
+    .button-hold:hover{
+      background: white;
+    }
 </style>
