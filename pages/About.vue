@@ -10,7 +10,7 @@
         </div>
         <div>
           <center>
-          <button  class="button-hold"></button>
+          <button @mousedown="playAudioHold()" @mouseup="stopAudio()" @mouseleave="stopAudio()"  class="button-hold"></button>
           <h3 style="text-align:center;font-size:20px;color:white">Hold Button</h3>
           </center>
         </div>
@@ -47,15 +47,19 @@
       },
       data(){
             return{
-              value_progress:0
+              value_progress:0,
+              audio: null
             }
       },
 
         name: "awards",
       mounted () {
+        this.audio = new Audio('/2018/02/action.mp3');
+        let audio_bg = new Audio("/2018/02/about.mp3");
+        audio_bg.play();
         this.$store.commit('REMOVE_LOADING');
         var timeoutId =0;
-        
+
         var value = 0;
         $('.button-hold').on('mousedown', function() {
 
@@ -83,6 +87,12 @@
       methods:{
           changeValue(value){
           this.value_progress = value
+        }, playAudioHold() {
+          this.audio.play();
+        },
+        stopAudio() {
+          this.audio.pause();
+          this.audio.currentTime = 0;
         }
       }
     }
